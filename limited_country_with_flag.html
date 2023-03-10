@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+<style>
+  .language-selector li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+</style>
+<div id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <p>You can also select a language below:</p>
+  <ul class="language-selector">
+    <li><a href="#" onclick="translateLanguage('en'); return false;"><span class="flag-icon flag-icon-gb"></span> English</a></li>
+    <li><a href="#" onclick="translateLanguage('km'); return false;"><span class="flag-icon flag-icon-kh"></span> Khmer</a></li>
+    <li><a href="#" onclick="translateLanguage('th'); return false;"><span class="flag-icon flag-icon-th"></span> Thai</a></li>
+    <li><a href="#" onclick="translateLanguage('zh-CN'); return false;"><span class="flag-icon flag-icon-cn"></span> Chinese</a></li>
+  </ul>
+  <script type="text/javascript">
+    function translateLanguage(lang) {
+      var selectElement = document.querySelector('select.goog-te-combo');
+      selectElement.value = lang;
+      selectElement.dispatchEvent(new Event('change'));
+    }
+  </script>
